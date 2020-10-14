@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+      <style>
+     #secret{
+       visibility: hidden;
+     }
+     #hide{
+       visibility: hidden;
+     }
+    </style>
+     <script>
+      function clickMe(par1, par2){
+        var secret = document.getElementById("secret1");
+        secret.style.visibility = "visible";
+        secret.innerHTML += " " + par1 + " " + par2;
+      }
+
+      function changeMe(field){
+        var value = field.value;
+        var txt = document.getElementById('txt');
+        txt.value = field.value;
+        
+      }
+      function ispisiText() {
+        var value = document.getElementById("txt").value;
+        var naslov = document.getElementById("secret");
+        naslov.style.visibility = "visible";
+        naslov.textContent = value;
+      }
+    </script>
+   
+  </head>
+   <body>
+   <button type="button" onclick="clickMe('Pera', 'Peric')">Click me!</button>
+   <p id="secret1">Hello World!</p>
+    <form action="">
+      <select name="selecting" id="selecting" onchange="changeMe(this)">
+        <option value="option1">Option1</option>
+        <option value="option2">Option2</option>
+        <option value="option3">Option3</option>
+        <input type="text" name="txt" id="txt">
+      </select>
+    </form>
+   <button onclick="ispisiText()">Click me!</button>
+    <h2 id="secret"></h2>
+  </body>
+</html>
